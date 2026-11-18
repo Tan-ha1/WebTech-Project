@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #222;
+  background-color: #e8edf1;
+  margin: 0;
+}
+
+/* ---------- Header and navigation ---------- */
+
+.header {
+  background-color: #f7f9fa;
+  text-align: center;
+  padding: 18px 15px 6px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: #2a7f8f;
+}
+
+.topnav {
+  background-color: #f7f9fa;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.topnav a {
+  display: inline-block;
+  padding: 8px 14px;
+  color: #222;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  color: #17697f;
+}
+
+.topnav a.active {
+  font-weight: bold;
+  color: #17697f;
+  border-bottom: 2px solid #17697f;
+}
+
+/* ---------- Form card ---------- */
+
+.container {
+  max-width: 420px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 6px;
+  font-size: 24px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+legend {
+  width: 100%;
+  padding: 0 0 4px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #17697f;
+  border-bottom: 1px solid #ddd;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.options label {
+  display: inline-block;
+  font-weight: normal;
+  margin-right: 12px;
+}
+
+.check-label {
+  font-weight: normal;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f2f4;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #2a7f8f;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Error message text */
+.error {
+  display: block;
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Border classes used by JavaScript */
+.errorBorder {
+  border-color: red !important;
+}
+
+.successBorder {
+  border-color: green !important;
+}
+
+/* ---------- Buttons ---------- */
+
+button {
+  width: 100%;
+  padding: 11px;
+  background-color: #17697f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0f5163;
+}
+
+button[disabled] {
+  background-color: #8db4bf;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  margin-top: 8px;
+  background-color: #777;
+}
+
+button.secondary:hover {
+  background-color: #555;
+}
+
+.bottom-text {
+  text-align: center;
+  margin: 20px 0 0;
+}
+
+.bottom-text a {
+  color: #17697f;
+}
+
+/* ---------- Pop-up ---------- */
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay.show {
+  display: flex;
+}
+
+.dialog {
+  position: relative;
+  width: 90%;
+  max-width: 380px;
+  max-height: 90%;
+  overflow: auto;
+  padding: 25px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.dialog h2 {
+  color: #17697f;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: auto;
+  padding: 2px 10px;
+  border: none;
+  background: none;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close:hover {
+  background-color: #eee;
+}

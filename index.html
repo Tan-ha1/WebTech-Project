@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Report a found item to the Campus Lost and Found system">
+  <title>Report Found Item</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Campus Lost & Found Platform</h1>
+  </div>
+
+  <!-- Navigation bar (links are placeholders until the other pages are built) -->
+  <div class="topnav">
+    <a href="#">Home</a>
+    <a href="#">Lost</a>
+    <a href="#" class="active">Found</a>
+    <a href="#">Collect</a>
+  </div>
+
+  <div class="container">
+    <h2>Report a Found Item</h2>
+    <p class="subtitle">Found something on campus? Tell us about it so the owner can get it back</p>
+
+    <form id="myForm" action="#" method="post" novalidate>
+
+      <!-- ===== Item details ===== -->
+      <fieldset>
+        <legend>Item Details</legend>
+
+        <!-- Item name -->
+        <div class="form-group">
+          <label for="itemName">Item Name</label>
+          <input type="text" id="itemName" name="itemName" placeholder="e.g. Black Wallet">
+          <span class="error" id="itemNameError"></span>
+        </div>
+
+        <!-- Category -->
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="">-- Select Category --</option>
+            <option value="Electronics">Electronics</option>
+            <option value="ID Card / Documents">ID Card / Documents</option>
+            <option value="Wallet / Money">Wallet / Money</option>
+            <option value="Books / Stationery">Books / Stationery</option>
+            <option value="Bag">Bag</option>
+            <option value="Keys">Keys</option>
+            <option value="Clothing / Accessories">Clothing / Accessories</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="error" id="categoryError"></span>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="4"
+                    placeholder="Colour, brand, size, condition"></textarea>
+          <span class="error" id="descriptionError"></span>
+        </div>
+
+        <!-- Photo (optional) -->
+        <div class="form-group">
+          <label for="photo">Photo of the Item (optional)</label>
+          <input type="file" id="photo" name="photo">
+        </div>
+      </fieldset>
+
+      <!-- ===== Where and when ===== -->
+      <fieldset>
+        <legend>Where and When</legend>
+
+        <!-- Campus area -->
+        <div class="form-group">
+          <label for="area">Campus Area</label>
+          <select id="area" name="area">
+            <option value="">-- Select Area --</option>
+            <option value="Classroom">Classroom</option>
+            <option value="Office">Office</option>
+            <option value="Laboratory">Laboratory</option>
+            <option value="Library">Library</option>
+            <option value="Cafeteria">Cafeteria</option>
+            <option value="Corridor / Stairs">Corridor / Stairs</option>
+            <option value="Other">Other university area</option>
+          </select>
+          <span class="error" id="areaError"></span>
+        </div>
+
+        <!-- Exact location -->
+        <div class="form-group">
+          <label for="locationDetail">Exact Location</label>
+          <input type="text" id="locationDetail" name="locationDetail"
+                 placeholder="e.g. Room 304, Building D">
+          <span class="error" id="locationDetailError"></span>
+        </div>
+
+        <!-- Date found -->
+        <div class="form-group">
+          <label for="dateFound">Date Found</label>
+          <input type="date" id="dateFound" name="dateFound">
+          <span class="error" id="dateError"></span>
+        </div>
+
+        <!-- Where is the item now -->
+        <div class="form-group">
+          <label>Where is the item now?</label>
+          <div class="options">
+            <label><input type="radio" name="currentLocation" value="With me"> I have it with me</label>
+            <label><input type="radio" name="currentLocation" value="Security Office"> Handed to Security Office</label>
+            <label><input type="radio" name="currentLocation" value="Left where found"> Left where I found it</label>
+          </div>
+          <span class="error" id="currentError"></span>
+        </div>
+      </fieldset>
+
+      <!-- ===== Your details ===== -->
+      <fieldset>
+        <legend>Your Details</legend>
+
+        <!-- Role -->
+        <div class="form-group">
+          <label>I am a</label>
+          <div class="options">
+            <label><input type="radio" name="role" value="Student"> Student</label>
+            <label><input type="radio" name="role" value="Faculty/Staff"> Faculty / Staff</label>
+          </div>
+          <span class="error" id="roleError"></span>
+        </div>
+
+        <!-- Name -->
+        <div class="form-group">
+          <label for="reporterName">Full Name</label>
+          <input type="text" id="reporterName" name="reporterName" placeholder="Enter your name">
+          <span class="error" id="reporterNameError"></span>
+        </div>
+
+        <!-- University ID -->
+        <div class="form-group">
+          <label for="reporterId">University ID</label>
+          <input type="text" id="reporterId" name="reporterId" placeholder="e.g. 23-12345-1">
+          <span class="error" id="reporterIdError"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email">
+          <span class="error" id="emailError"></span>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" placeholder="01XXXXXXXXX">
+          <span class="error" id="phoneError"></span>
+        </div>
+      </fieldset>
+
+      <!-- Submit stays disabled until this box is ticked -->
+      <div class="form-group">
+        <label class="check-label">
+          <input type="checkbox" id="confirm" name="confirm">
+          I confirm this item was found on campus and the information is true.
+        </label>
+        <span class="error" id="confirmError"></span>
+      </div>
+
+      <button type="submit" id="submitBtn" disabled>Submit Report</button>
+      <button type="button" id="resetBtn" class="secondary">Reset</button>
+    </form>
+
+    <p class="bottom-text">Changed your mind? <a href="#">Back to Home</a></p>
+  </div>
+
+  <!-- Pop-up shown after a successful submit -->
+  <div class="overlay" id="overlay">
+    <div class="dialog">
+      <button type="button" class="close" id="closeBtn">x</button>
+      <h2>Report Submitted</h2>
+      <ul id="summaryList"></ul>
+      <p>A Security Officer will verify your report.</p>
+      <button type="button" id="okBtn">OK</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
